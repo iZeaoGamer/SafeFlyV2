@@ -29,7 +29,7 @@ class Main extends PluginBase implements Listener {
         if($event instanceof EntityDamageByEntityEvent) {
         $damager = $event->getDamager();
            if($damager instanceof Player && $this->isPlayer($damager)) {
-              $damager->sendTip(TextFormat::RED . "You cannot damage players while in fly mode!");
+              $damager->sendTip(TextFormat::RED . "§dYou cannot damage players while in §5fly mode!");
               $event->setCancelled(true);
            }
         }
@@ -41,13 +41,13 @@ class Main extends PluginBase implements Listener {
                 if($this->isPlayer($sender)) {
                     $this->removePlayer($sender);
                     $sender->setAllowFlight(false);
-                    $sender->sendMessage(TextFormat::RED . "You have disabled fly mode!");
+                    $sender->sendMessage(TextFormat::RED . "§2You have disabled fly mode succesfully! §3You are no longer able to fly.");
                     return true;
                 }
                 else{
                     $this->addPlayer($sender);
                     $sender->setAllowFlight(true);
-                    $sender->sendMessage(TextFormat::GREEN . "You have enabled fly mode!");
+                    $sender->sendMessage(TextFormat::GREEN . "§bYou have enabled fly mode! §aYou can now fly! :)");
                     return true;
                 }
             }
