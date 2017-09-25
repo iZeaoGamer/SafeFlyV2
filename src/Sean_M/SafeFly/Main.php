@@ -35,7 +35,7 @@ class Main extends PluginBase implements Listener {
         }
      }
 
-    public function onCommand(CommandSender $sender, Command $cmd, $label,array $args) {
+    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
         if(strtolower($cmd->getName()) == "fly") {
             if($sender instanceof Player) {
                 if($this->isPlayer($sender)) {
