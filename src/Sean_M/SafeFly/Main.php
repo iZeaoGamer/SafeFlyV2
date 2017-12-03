@@ -18,11 +18,11 @@ class Main extends PluginBase implements Listener {
 
      public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info(TextFormat::GREEN . "SafeFly by Sean_M enabled!");
+        $this->getLogger()->info(TextFormat::GREEN . "SafeFlyV2 by Sean_M enabled!");
      }
 
      public function onDisable() {
-        $this->getLogger()->info(TextFormat::RED . "SafeFly by Sean_M disabled!");
+        $this->getLogger()->info(TextFormat::RED . "SafeFlyV2 by Sean_M disabled!");
      }
    
      public function onEntityDamage(EntityDamageEvent $event) {
@@ -35,8 +35,8 @@ class Main extends PluginBase implements Listener {
         }
      }
 
-    public function onCommand(CommandSender $sender, Command $cmd, $label,array $args) {
-        if(strtolower($cmd->getName()) == "fly") {
+    public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+        if(strtolower($command->getName()) == "fly") {
             if($sender instanceof Player) {
                 if($this->isPlayer($sender)) {
                     $this->removePlayer($sender);
