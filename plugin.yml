@@ -1,7 +1,7 @@
 name: SafeFlyV2
 author: Sean_M
-version: "2.0.0"
-api: [3.0.0-ALPHA8, 3.0.0-ALPHA9]
+version: "2.0.1"
+api: [3.0.0-ALPHA9, 3.0.0-ALPHA10]
 description: Fly in survival without damaging players!
 main: Sean_M\SafeFly\Main
 
