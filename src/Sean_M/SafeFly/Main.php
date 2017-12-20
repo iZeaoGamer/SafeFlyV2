@@ -35,6 +35,20 @@ class Main extends PluginBase implements Listener {
         }
      }
 
+    public function onJoin(PlayerJoinEvent $event){
+        $player = $event->getPlayer();
+        if ($player->hasPermission("fly.command")) {
+            /**
+             * onJoin if in survival mode = setAllowFlight false
+             */
+            if ($player->getGamemode("survival")) {
+                $player->getAllowFlight();
+                $player->setAllowFlight(false);
+                $player->sendMessage($this->prefix . TF::RED . "You are now in Regular Mode.");
+            }
+        }
+    }
+    
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
         if(strtolower($command->getName()) == "fly") {
             if($sender instanceof Player) {
