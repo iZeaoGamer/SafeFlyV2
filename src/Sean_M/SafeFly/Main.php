@@ -37,7 +37,7 @@ class Main extends PluginBase implements Listener {
 
     public function onJoin(PlayerJoinEvent $event){
         $player = $event->getPlayer();
-        if ($player->hasPermission("fly.command")) {
+        if ($player->hasPermission("safefly.fly")) {
             /**
              * onJoin if in survival mode = setAllowFlight false
              */
