@@ -45,7 +45,7 @@ class Main extends PluginBase implements Listener {
             if ($player->getGamemode("survival")) {
                 $player->getAllowFlight();
                 $player->setAllowFlight(false);
-                $player->sendMessage($this->prefix . TF::RED . "You are now in Regular Mode.");
+                $player->sendMessage(TextFormat::RED . "You are now in Regular Mode.");
             }
         }
     }
