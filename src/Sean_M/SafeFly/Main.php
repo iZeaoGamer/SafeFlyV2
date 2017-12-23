@@ -38,14 +38,14 @@ class Main extends PluginBase implements Listener {
 
     public function onJoin(PlayerJoinEvent $event){
         $player = $event->getPlayer();
-        if ($sender->hasPermission("safefly.fly")) {
+        if ($player->hasPermission("safefly.fly")) {
             /**
              * onJoin if in survival mode = setAllowFlight false
              */
-            if ($sender->getGamemode("survival")) {
-                $sender->getAllowFlight();
-                $sender->setAllowFlight(false);
-                $sender->sendMessage(TextFormat::RED . "You are now in Regular Mode.");
+            if ($player->getGamemode("survival")) {
+                $player->getAllowFlight();
+                $player->setAllowFlight(false);
+                $player->sendMessage(TextFormat::RED . "You are now in Regular Mode.");
                 return true;
             }
         }
