@@ -1,6 +1,6 @@
 --- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/TheFixerDevelopment/SafeFlyV2
 branches:
-- patch-1
+- patch-4
 projects:
   SafeFlyV2:
     path: ""
