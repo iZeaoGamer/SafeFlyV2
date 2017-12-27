@@ -42,7 +42,7 @@ class Main extends PluginBase implements Listener {
             /**
              * onJoin if in survival mode = setAllowFlight false
              */
-                 if($this->isPlayer($sender);
+                 if($this->isPlayer($sender)) {
                     $this->removePlayer($sender);
                     $sender->setAllowFlight(false);
                     $sender->sendMessage(TextFormat::GREEN . "You have disabled fly mode!");
