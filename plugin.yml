@@ -10,3 +10,10 @@ commands:
         description: "Activates or deactivates SafeFly."
         usage: "/fly"
         permission: safefly.fly
+        
+ permissions:
+    safefly.fly.off:
+    description: Turns your fly off when you leave the server, and upon join.
+    default: true
+    
+ 
