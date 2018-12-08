@@ -57,6 +57,12 @@ class Main extends PluginBase implements Listener {
                 if($this->isPlayer($sender)) {
                     $this->removePlayer($sender);
                     $sender->setAllowFlight(false);
+                    $level = $this->getServer()->getDefaultLevel();
+                    $spawn = $level->getSafeSpawn();
+                     $x = $spawn->getFloorX();
+                     $y = $spawn->getFloorY();
+                     $z = $spawn->getFloorZ();
+                     $player->teleport(new Position($x, $y, $z, $level));
                     $sender->sendMessage(TextFormat::RED . "You have disabled fly mode!");
                     return true;
                 }
