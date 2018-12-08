@@ -9,7 +9,7 @@ commands:
     fly:
         description: "Activates or deactivates SafeFly."
         usage: "/fly"
-        permission: safefly.fly
+        permission: vmcore.fly
 permissions:
   safefly.fly.off:
     description: "Turns off your fly mode when you leave."
