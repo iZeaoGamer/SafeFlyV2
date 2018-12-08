@@ -8,6 +8,8 @@ use pocketmine\utils\TextFormat;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\player\PlayerJoinEvent;
+use pocketmine\level\Level;
+use pocketmine\level\Position;
 use pocketmine\Player;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
