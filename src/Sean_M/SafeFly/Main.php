@@ -38,7 +38,7 @@ class Main extends PluginBase implements Listener {
 
     public function onJoin(PlayerJoinEvent $event){
         $sender = $event->getPlayer();
-        if ($sender->hasPermission("vmcore.fly")) {
+        if ($sender->hasPermission("safefly.fly.off")) {
             /**
              * onJoin if in survival mode = setAllowFlight false
              */
@@ -54,6 +54,7 @@ class Main extends PluginBase implements Listener {
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
         if(strtolower($command->getName()) == "fly") {
             if($sender instanceof Player) {
+                if($sender->hasPermission("vmcore.fly")){
                 if($this->isPlayer($sender)) {
                     $this->removePlayer($sender);
                     $sender->setAllowFlight(false);
@@ -72,6 +73,7 @@ class Main extends PluginBase implements Listener {
                 return true;
             }
         }
+    }
     }
     public function addPlayer(Player $player) {
         $this->players[$player->getName()] = $player->getName();
